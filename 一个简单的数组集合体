@@ -1,0 +1,111 @@
+#include<stdio.h>
+void input(int a[]);
+void output(int a[]);
+void sort(int a[],int n);
+void find(int a[],int x);
+void maxmum(int a[]);
+void minmum(int a[]);
+void average(int a[]);
+int main()
+{
+	int arr[10]={0};
+	input(arr);
+	output(arr);
+	sort(arr,10);
+	find(arr,55);
+	maxmum(arr);
+	minmum(arr);
+	average(arr);
+	return 0; 
+}
+void input(int a[])
+{
+	int i;
+	for(i=0;i<10;i++)
+	scanf("%d",&a[i]);
+}
+
+void output(int a[])
+{
+	int i;
+	for(i=0;i<10;i++)
+	{
+		printf("%d ",a[i]);
+	}
+}
+
+void sort(int a[],int n)
+{
+	int i,j,temp;
+	for(i=0;i<n-1;i++)
+	{
+		for(j=n-1;j>i;j--)
+		{
+			if(a[j]<a[j-1])
+			{
+				temp=a[j-1];
+				a[j-1]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+} 
+
+void find(int a[],int x)
+{
+	int i =0;
+	while(i<10)
+	{
+		if(x==a[i])
+		{
+			break;
+		}
+        else{i++;}
+	}
+	if(i<10)
+	{
+		printf("the index = %d\n",i);
+	}
+	else{
+		printf("the num is no found\n");
+	}
+}
+
+void maxmum(int a[])
+{
+	int i;
+	int max=a[0];
+	for(i=1;i<10;i++)
+	{
+		if(max<a[i])
+		{
+			max = a[i];
+		}
+	}
+	printf("the maxmum = %d\n",max);
+}
+
+void minmum(int a[])
+{
+	int i;
+	int min = a[0];
+	for(i=1;i<10;i++)
+	{
+		if(min>a[i])
+		{
+			min = a[i];
+		}
+	}
+	printf("the minmum = %d\n",min);
+}
+
+void average(int a[])
+{
+	int i;
+	int mix=0;
+	for(i=0;i<10;i++)
+	{
+		mix += a[i];
+	}
+	printf("%d\n",mix/10);
+}
