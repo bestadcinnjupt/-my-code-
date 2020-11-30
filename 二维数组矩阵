@@ -1,0 +1,69 @@
+#include<stdio.h>
+#define row 3
+#define col 3 
+void input(int a[row][col]);
+void output(int a[row][col]);
+void zhuanzhi(int a[row][col]);
+void duijiao(int a[row][col]);
+int main()
+{
+	int arry[row][col]={0};
+	input(arry);
+	output(arry);
+	zhuanzhi(arry);
+	duijiao(arry);
+	return 0;
+	
+}
+void input(int a[row][col])
+{
+	int i,j;
+	for(i=0;i<row;i++)
+	{
+		for(j=0;j<col;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+}
+void output(int a[row][col])
+{
+	int i,j;
+	for(i=0;i<row;i++)
+	{
+		for(j=0;j<col;j++)
+		{
+			printf("%3d ",a[i][j]);
+		
+		}
+		printf("\n");
+	}
+}
+void zhuanzhi(int a[row][col])
+{
+	int b[row][col];
+	int i,j;
+	for(i=0;i<row;i++)
+	{
+		for(j=0;j<col;j++)
+		{
+			b[i][j]=a[j][i];
+			printf("%3d ",b[i][j]);
+			
+		}
+		printf("\n");
+	}
+	
+}
+void duijiao(int a[row][col])
+{
+	int i;
+	int sum = 0;
+	for(i=0;i<col;i++)
+	{
+		sum += a[i][i];
+	
+	}
+		printf("%3d ",sum);
+	
+}
